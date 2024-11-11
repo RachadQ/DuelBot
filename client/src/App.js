@@ -57,19 +57,18 @@ function App() {
     }
   }, [data]);
 
+  const handleFetchStock = () => {
+     fetchData(symbol); // Fetch stock data when the button is clicked };
+  };
   return (
     <div className="App">
-      <div>
-      <h1>TradingView Clone</h1>
-      <input
-        type="text"
-        value={symbol}
-        onChange={(e) => setSymbol(e.target.value.toUpperCase())}
-        placeholder="Enter stock symbol (e.g., AAPL)"
-      />
-      <div ref={chartContainerRef} style={{ position: 'relative', width: '600px', height: '400px' }} />
-    </div>
-    </div>
+       <div> 
+        <h1>TradingView Clone</h1> 
+        <input type="text" value={symbol} onChange={(e) => setSymbol(e.target.value.toUpperCase())}
+        placeholder="Enter stock symbol (e.g., AAPL)" /> 
+        <button onClick={handleFetchStock}>Fetch Stock Price</button> 
+        <div ref={chartContainerRef} style={{ position: 'relative', width: '600px', height: '400px' }} /> 
+        </div> </div>
   );
 }
 
